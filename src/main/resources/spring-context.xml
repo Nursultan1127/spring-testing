@@ -4,6 +4,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="questionCSVService" class="services.QuestionCSVServiceImpl"/>
+    <bean id="questionCSVService" class="services.QuestionCSVServiceImpl">
+        <constructor-arg type="dao.QuestionCSVDao" ref="questionCSVDao"/>
+    </bean>
+    <bean id="questionCSVDao" class="dao.QuestionCSVDaoImpl">
+    </bean>
 
 </beans>
