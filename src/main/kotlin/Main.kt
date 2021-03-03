@@ -3,7 +3,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext
 import services.QuestionCSVService
 
 fun main() {
-
     val context = ClassPathXmlApplicationContext("spring-context.xml")
 
     val questionCSVService = context.getBean(QuestionCSVService::class.java)
