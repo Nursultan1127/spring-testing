@@ -9,5 +9,7 @@
     </bean>
     <bean id="questionCSVDao" class="dao.QuestionCSVDaoImpl">
     </bean>
+    <bean id="questionCSVDisplayService" class="services.QuestionCSVDisplayServiceImpl">
+    </bean>
 
 </beans>
