@@ -1,17 +1,18 @@
-package dao
+package ru.otus.dao
 
 import au.com.bytecode.opencsv.CSVReader
-import models.Answer
-import models.Question
 import org.springframework.stereotype.Repository
+import ru.otus.configs.CSVFileConfig
+import ru.otus.models.Answer
+import ru.otus.models.Question
 import java.io.FileReader
 
 @Repository
-class QuestionCSVDaoImpl : QuestionCSVDao {
+class QuestionCSVDaoImpl(private val csvFileConfig: CSVFileConfig) : QuestionCSVDao {
 
     override fun getQuestions(): List<Question> {
-
         val reader = CSVReader(
+//            FileReader(csvFileConfig.csvPath), // не заработало ни с каких углов
             FileReader("D:\\otus-spring\\1-Введение в Spring Framework\\spring-testing\\src\\main\\resources\\questions.csv"),
             ',', '"', 1)
 
@@ -22,8 +23,9 @@ class QuestionCSVDaoImpl : QuestionCSVDao {
                 questions.add(
                     Question(
                         nextLine!![0].toInt(),
-                        nextLine!![1],
-                        buildAnswers(nextLine!![2].split(";"))))
+                        nextLine!![1].trim(),
+                        buildAnswers(nextLine!![2].trim().split(";")),
+                        Answer(nextLine!![3].trim())))
             }
         }
 

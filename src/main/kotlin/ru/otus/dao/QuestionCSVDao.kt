@@ -1,6 +1,6 @@
-package dao
+package ru.otus.dao
 
-import models.Question
+import ru.otus.models.Question
 
 interface QuestionCSVDao {
 

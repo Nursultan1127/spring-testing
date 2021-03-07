@@ -1,6 +1,6 @@
-package services
+package ru.otus.services
 
-import models.Question
+import ru.otus.models.Question
 
 
 interface QuestionCSVService {

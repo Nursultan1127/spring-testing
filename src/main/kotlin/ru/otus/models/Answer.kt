@@ -1,4 +1,4 @@
-package models
+package ru.otus.models
 
 data class Answer(val description: String)
 

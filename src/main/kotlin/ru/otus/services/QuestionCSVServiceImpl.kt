@@ -1,8 +1,8 @@
-package services
+package ru.otus.services
 
-import dao.QuestionCSVDao
-import models.Question
 import org.springframework.stereotype.Service
+import ru.otus.dao.QuestionCSVDao
+import ru.otus.models.Question
 
 @Service
 class QuestionCSVServiceImpl(private val dao: QuestionCSVDao) : QuestionCSVService {
