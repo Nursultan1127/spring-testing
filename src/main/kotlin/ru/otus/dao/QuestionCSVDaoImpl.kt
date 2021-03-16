@@ -12,8 +12,7 @@ class QuestionCSVDaoImpl(private val csvFileConfig: CSVFileConfig) : QuestionCSV
 
     override fun getQuestions(): List<Question> {
         val reader = CSVReader(
-//            FileReader(csvFileConfig.csvPath), // не заработало ни с каких углов
-            FileReader("D:\\otus-spring\\1-Введение в Spring Framework\\spring-testing\\src\\main\\resources\\questions.csv"),
+            FileReader(csvFileConfig.csvPath),
             ',', '"', 1)
 
         var nextLine: Array<String>?

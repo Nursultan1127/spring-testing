@@ -8,6 +8,7 @@ import ru.otus.services.AuthorizationService
 import ru.otus.services.QuestionCSVService
 import ru.otus.services.SummarizeResultService
 import ru.otus.services.TestingService
+import ru.otus.studenttesting.services.FakeControllerService
 
 @Configuration
 @ComponentScan
@@ -16,16 +17,7 @@ open class Main
 
 fun main() {
     val context = AnnotationConfigApplicationContext(Main::class.java)
+    val bean = context.getBean(FakeControllerService::class.java)
+    bean.testStudent()
 
-    val authorizationService = context.getBean(AuthorizationService::class.java)
-    authorizationService.authorize()
-
-    val questionCSVService = context.getBean(QuestionCSVService::class.java)
-    val questions = questionCSVService.getQuestions()
-
-    val testingService = context.getBean(TestingService::class.java)
-    val result = testingService.testStudent(questions)
-
-    val summarizeResultService = context.getBean(SummarizeResultService::class.java)
-    println(summarizeResultService.summarizeResult(result))
 }
