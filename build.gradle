@@ -12,7 +12,15 @@ repositories {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib"
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    implementation group: 'org.springframework', name: 'spring-context', version: '5.3.4'
+    implementation group: 'net.sf.opencsv', name: 'opencsv', version: '2.3'
+    implementation group: 'org.springframework', name: 'spring-aop', version: '5.3.4'
+    implementation group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.6'
+    implementation 'io.github.microutils:kotlin-logging-jvm:2.0.6'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.7.0'
+    testImplementation("org.mockito:mockito-core:2.23.4")
+    testImplementation group: 'org.mockito', name: 'mockito-junit-jupiter', version: '3.8.0'
+    testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.1.0")
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 }
 
